@@ -1,21 +1,19 @@
-# _Galactic Age Calculator_
+# _search for help_
 
-#### _Independent project implementing BDD in Javascript using Jasmine and Karma, 10.18.2017_
+#### _Independent project implementing API calls_
 
 #### By _**Javier jimenez**_
 
 ## Description
 
-_Super Galactic Age Calculator is an application that can return the users age in seconds how old the user would be on other planets in our solar system. Want to find our how old you are in Mars years? The app also tells the user their average life expectancy based on gender and location._
+_A web page where you can input a search for a doctor names and your illness_
 
 ## Specs
 
 | Description        | Input           | Output  |
 | ------------------ |:-------------:| -----:|
-| Age in Seconds   | 24 | 756864000 seconds |
-| Age on Mercury  | 24 | 576 years on Mercury |
-| Age from birthdate  | 1987, 09, 18 | 30 Years Ago |
-| Difference Between Two Dates in Seconds  | 1987/09/18, 2030/09/18 | 1356998400 seconds |
+| Search for doctor   | mark | doctor mark info |
+| What is the problem  | back pain | doctor XYZ can help you with that |
 
 
 ## Setup/Installation Requirements
