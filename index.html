@@ -12,27 +12,42 @@
   </head>
   <body>
     <div class="container">
-      <h1>Get help!</h1>
+      <h1>Medics on call 24/7</h1>
 
-      <div class="card">
-        <div id="medicalDoctor"><!--ignore this id-->
-          <!--new form-->
-          <form id="medical-doctor-form">
-            <label for="doctor">Search your doctor:</label>
-            <input  id="doctor" type="text" name="doctor">
+      <div class="row">
+        <div class="col-sm-6">
 
-            <button type="submit" class=" btn btn-danger" id="sourceButton">Get Doctor</button>
-          </form>
+            <div>
+              <!--new form-->
+              <form id="medical-doctor-form">
+                <label for="doctor">Search your doctor:</label><br>
+                <input  id="doctor" type="text" name="doctor" required>
+                <button type="submit" class=" btn btn-danger">Get Doctor</button>
+              </form>
+              <br>
+              <h3>Search for doctors in portland:</h3>  <!--names of the doctors-->
+              <div id="doctor-list">
+              </div>
+            </div>
 
-          <br>
-          <h3>Search for doctors in portland:</h3>  <!--names of the doctors-->
-          <div id="doctor-list">
-          </div>
+        </div>
+        <div class="col-sm-6">
+
+            <div>
+              <!--form-->
+              <form id="medical-problem-form">
+                <label for="problem">What is the pain/problem?</label><br>
+                <input  id="problem" type="text" name="problem" required>
+                <button type="submit" class=" btn btn-danger">Get help</button>
+              </form>
+              <br>
+              <h3>Here are some doctors for that issue</h3>  <!--names of the doctors-->
+              <div id="problem-list">
+              </div>
+            </div>
 
         </div>
       </div>
-
     </div>
-
   </body>
 </html>
