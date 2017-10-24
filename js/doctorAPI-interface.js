@@ -5,24 +5,15 @@ $(document).ready(function(){
     event.preventDefault();
     let doc = new Health();
     let docname = $('#doctor').val();
-    console.log(docname);
+
     doc.doctorName(docname).then(greeting);
 
     function greeting(response){
       let body = JSON.parse(response);
-      console.log(body);
-      let arr = []; //all the objects
-      console.log(arr);
-
-
-
-      body.data.forEach(function(profile) {
-        arr.push(profile);
-      });
-
+      let doctors = body.data;
       // arr each loop not iterating through all the objects in the array
-      arr.length.forEach(function(profile) {
-          $('#doctor-list').append(`<li>${arr.profile.first_name}, ${arr.profile.last_name}</li>`);
+      doctors.forEach(function(doctor) {
+          $('#doctor-list').append(`<li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li>`);
       }, function(error) {
           $('.showErrors').text(`There was an error processing your request: ${error.message}`);
       });
