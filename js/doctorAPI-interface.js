@@ -13,18 +13,16 @@ $(document).ready(function(){
     greeting2.then(function(response){
       let body = JSON.parse(response);
       let problem = body.data;
-      // arr each loop not iterating through all the objects in the array
-      problem.forEach(function(doctor) {
-          $('#problem-list').append(`<ul><li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li> <li>${doctor.specialties[0].description}</li> <li>${doctor.practices[0].visit_address.street}</li><li>${doctor.practices[0].phones[0].number}</li><li>${doctor.practices[0].website}</li><li>taking patience: ${doctor.practices[0].accepts_new_patients}</li></ul>`);
-      }, function(error) {
+
+      if (body.data.length > 0) {
+        problem.forEach(function(doctor) {
+            $('#problem-list').append(`<ul><li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li> <li>${doctor.specialties[0].description}</li> <li>${doctor.practices[0].visit_address.street}</li><li>${doctor.practices[0].phones[0].number}</li><li>${doctor.practices[0].website}</li><li>taking patience: ${doctor.practices[0].accepts_new_patients}</li></ul>`);
+        });
+      } else {
+        $('#error').text(`we could not find that result for you`);
+      }
+    }, function(error) {
           $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-      });
-
-
     });
   });
-
-
-
-
 });

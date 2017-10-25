@@ -17,6 +17,4 @@ export class Health {
       request.send();
     });
   }
-
-
 }

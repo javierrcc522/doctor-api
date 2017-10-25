@@ -19,6 +19,9 @@ _A web page where you can input a search for a doctor names and your illness_
 ## Setup/Installation Requirements
 
 * _Clone the repository [here](https://github.com/javierrcc522/doctor-api.git)_
+* _Open file in atom editor_
+* _Make file .env_
+* _Inside .env file type this: exports.apiKey = "YOUR KEY GOES HERE"_
 * _In terminal run 'npm install'_
 * _In terminal run 'bower Install'_
 * _In terminal run 'gulp build'_
