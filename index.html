@@ -13,39 +13,31 @@
   <body>
     <div class="container">
       <h1>Medics on call 24/7</h1>
-
       <div class="row">
-        <div class="col-sm-6">
-
+        <div class="col-sm-8">
             <div>
               <!--new form-->
-              <form id="medical-doctor-form">
-                <label for="doctor">Search your doctor:</label><br>
-                <input  id="doctor" type="text" name="doctor" required>
+              <form id="medical-problem-form">
+
+                <div class="form-group row">
+                  <label for="doctor" class="col-sm-4">Search your doctor:</label>
+                  <div class="col-sm-8">
+                    <input  id="doctor" type="text" name="doctor">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="problem" class="col-sm-4">What is the pain/problem?</label>
+                  <div class="col-sm-8">
+                    <input  id="problem" type="text" name="problem">
+                  </div>
+                </div>
                 <button type="submit" class=" btn btn-danger">Get Doctor</button>
               </form>
               <br>
               <h3>Search for doctors in portland:</h3>  <!--names of the doctors-->
-              <div id="doctor-list">
-              </div>
-            </div>
-
-        </div>
-        <div class="col-sm-6">
-
-            <div>
-              <!--form-->
-              <form id="medical-problem-form">
-                <label for="problem">What is the pain/problem?</label><br>
-                <input  id="problem" type="text" name="problem" required>
-                <button type="submit" class=" btn btn-danger">Get help</button>
-              </form>
-              <br>
-              <h3>Here are some doctors for that issue</h3>  <!--names of the doctors-->
               <div id="problem-list">
               </div>
             </div>
-
         </div>
       </div>
     </div>

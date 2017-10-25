@@ -1,50 +1,28 @@
 import { Health } from './../js/doctorAPI.js';
 //first api call
 $(document).ready(function(){
-  $('#medical-doctor-form').submit(function(event) {
-    event.preventDefault();
-    let doc = new Health();
-    let docname = $('#doctor').val();
-
-    doc.doctorName(docname).then(greeting);
-
-    function greeting(response){
-      let body = JSON.parse(response);
-      let doctors = body.data;
-      // arr each loop not iterating through all the objects in the array
-      doctors.forEach(function(doctor) {
-          $('#doctor-list').append(`<li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li>`);
-      }, function(error) {
-          $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-      });
-
-
-    }
-  });
-
-//second api call
+// 2 api calls in one
   $('#medical-problem-form').submit(function(event) {
     event.preventDefault();
     let doc = new Health();
-    let docname = $('#problem').val();
+    let problemName = $('#problem').val();
+    let docName = $('#doctor').val();
 
-    doc.doctorName(docname).then(greeting);
+    let greeting2 = doc.searchQuery(problemName, docName);
 
-    function greeting(response){
+    greeting2.then(function(response){
       let body = JSON.parse(response);
-      let doctors = body.data;
+      let problem = body.data;
       // arr each loop not iterating through all the objects in the array
-      doctors.forEach(function(doctor) {
-          $('#problem-list').append(`<li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li>`);
+      problem.forEach(function(doctor) {
+          $('#problem-list').append(`<ul><li>${doctor.profile.first_name}, ${doctor.profile.last_name}</li> <li>${doctor.specialties[0].description}</li> <li>${doctor.practices[0].visit_address.street}</li><li>${doctor.practices[0].phones[0].number}</li><li>${doctor.practices[0].website}</li><li>taking patience: ${doctor.practices[0].accepts_new_patients}</li></ul>`);
       }, function(error) {
           $('.showErrors').text(`There was an error processing your request: ${error.message}`);
       });
 
 
-    }
+    });
   });
-
-
 
 
 
